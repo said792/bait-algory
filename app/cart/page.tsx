@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 export default function CartPage() {
-  const { items, updateQuantity, removeItem } = useCart();
+const { items, updateQuantity, removeFromCart } = useCart();
 
   const totalAmount = items.reduce((total, item) => {
     const effectivePrice =
@@ -137,7 +137,7 @@ export default function CartPage() {
                   </div>
 
                   <button
-                    onClick={() => removeItem(item.id)}
+                    onClick={() => removeFromCart(item.id)}
                     className="text-red-500"
                   >
                     <Trash2 size={20} />
