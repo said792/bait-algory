@@ -8,7 +8,7 @@ import { ChevronLeft, MapPin, Phone, Mail, ShoppingBag } from "lucide-react";
 
 export default function CheckoutPage() {
   const router = useRouter();
-  const { items, getTotalPrice, clearCart } = useCart();
+  const { items, totalPrice, clearCart } = useCart();
   const [loading, setLoading] = useState(false);
 
   // حالة بيانات الشحن
@@ -46,7 +46,7 @@ export default function CheckoutPage() {
       customer_name: shippingInfo.name,
       customer_phone: shippingInfo.phone,
       customer_address: shippingInfo.address,
-      total: getTotalPrice(),
+      total: totalPrice(),
       items: items,
     };
 
@@ -166,7 +166,7 @@ export default function CheckoutPage() {
                   ) : (
                     <>
                       <span>تأكيد الطلب</span>
-                      <span className="text-amber-200/80 font-normal text-base">({getTotalPrice()} ج.م)</span>
+                      <span className="text-amber-200/80 font-normal text-base">({totalPrice()} ج.م)</span>
                       <div className="absolute inset-0 -translate-x-full group-hover:animate-shine bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none"></div>
                     </>
                   )}
@@ -211,7 +211,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex justify-between items-end">
                   <span className="text-gray-300 font-medium">المجموع الكلي</span>
-                  <span className="text-2xl font-black text-amber-400">{getTotalPrice()} ج.م</span>
+                  <span className="text-2xl font-black text-amber-400">{totalPrice()} ج.م</span>
                 </div>
               </div>
 
