@@ -4,8 +4,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 // لم نعد نستدعي Header هنا
 
-const inter = Inter({ subsets: ["arabic", "latin"] });
-
+const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "بيت الجوري | للنجف والتحف",
   description: "متجر النجف والأدوات المنزلية",
